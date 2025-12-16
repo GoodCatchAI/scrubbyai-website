@@ -6,52 +6,41 @@
   <title>ScrubbyAI - Join the Beta Waitlist</title>
   <script src="/_sdk/element_sdk.js"></script>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
-  <script src="https://cdn.tailwindcss.com"></script>
-  <style>
-    body {
-      box-sizing: border-box;
-      font-family: 'Poppins', sans-serif;
-    }
-    
-    .gradient-bg {
-      background: linear-gradient(135deg, #ecedec 0%, #f8f9fa 100%);
-    }
-
-    img {  
-      border-radius: 10px;
-      width: 80px;
-    }
-  </style>
-  <style>@view-transition { navigation: auto; }</style>
+  <link rel="stylesheet" href="styles.css">
   <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
  </head>
- <body class="h-full">
-  <div class="w-full h-full gradient-bg overflow-auto">
-   <div class="min-h-full flex flex-col"><!-- Header -->
-    <header class="w-full px-6 py-4">
-     <div class="max-w-6xl mx-auto flex items-center justify-between">
-      <div class="flex items-center gap-3">
+ <body>
+  <div class="page-wrapper gradient-bg">
+   <div class="content-wrapper"><!-- Header -->
+    <header>
+     <div class="header-container">
+      <div class="logo-section">
        <img src="assets/scrubbyai cropped.jpg" alt="ScrubbyAI logo"></img>
        <div>
-        <h1 id="company-name" class="text-xl font-bold" style="color: #559fcb;">ScrubbyAI</h1>
-        <p id="tagline" class="text-sm" style="color: #72829c;">Clean up AI slop before it ships.</p>
+        <h1 id="company-name" class="company-name" style="color: #559fcb;">ScrubbyAI</h1>
+        <p id="tagline" class="tagline" style="color: #72829c;">Clean up AI slop before it ships.</p>
        </div>
       </div>
      </div>
-    </header><!-- Hero Section -->
-    <main class="flex-1 flex items-center justify-center px-6 py-12">
-     <div class="max-w-2xl w-full text-center">
-      <h2 id="hero-title" class="text-5xl font-bold mb-6" style="color: #559fcb;">Join the Scrubby Beta</h2>
-      <p id="hero-description" class="text-xl mb-12" style="color: #72829c;">Be among the first to experience Scrubby and help shape the future of AI content quality control.</p><!-- Typeform Embed -->
-      <div class="bg-white rounded-lg shadow-lg p-8 mx-auto" style="max-width: 600px;">
-       <div data-tf-live="01KCJGEPWF8GMX8JM7RZVDX9EW"></div>
-       <script src="//embed.typeform.com/next/embed.js"></script>
+    </header>
+    <!-- Hero Section -->
+    <main>
+     <div class="hero-container">
+        <div class="hero-container-inner-left">
+            <h2 id="hero-title" class="hero-title" style="color: #559fcb;">Join the Scrubby Beta</h2>
+            <p id="hero-description" class="hero-description" style="color: #72829c;">We're building the world's first developer toolkit that catches AI slop before it hits your codebase.</p>
+            <p id="hero-description" class="hero-description" style="color: #72829c;">Sign up for your chance to test the beta when we launch.</p>
+            <p id="hero-description" class="hero-description" style="color: #72829c; font-style: italic; text-align: center;">~ Launching Winter 2026 ~</p>
+        </div>
+        <div class="hero-container-inner-right">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepV_rwH5PTJXRW-ZmUzWOOvBgwot4skr-j0kCOs4-NO8UIdQ/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>     
+        </div>
       </div>
-     </div>
-    </main><!-- Footer -->
-    <footer class="w-full px-6 py-6">
-     <div class="max-w-6xl mx-auto text-center">
-      <p id="footer-text" class="text-sm" style="color: #72829c;">© 2024 ScrubbyAI. All rights reserved.</p>
+    </main>
+    <!-- Footer -->
+    <footer>
+     <div class="footer-container">
+      <p id="footer-text" class="footer-text" style="color: #72829c;">© 2025 ScrubbyAI. All rights reserved.</p>
      </div>
     </footer>
    </div>
