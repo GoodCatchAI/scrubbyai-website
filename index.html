@@ -47,22 +47,22 @@
         <!-- terminal panel -->
         <div class="panel">
           <div class="term-body">
-            <span class="prompt">$</span> <span class="cmd">scrubby learn</span> . --save repo-patterns.json
+<span class="prompt">$</span> <span class="cmd">scrubby learn</span> . --save repo-patterns.json
 
-            → scanning codebase… <span class="ok">ok</span>
-            → discovering conventions… <span class="ok">ok</span>
-            → wrote "repo-patterns.json" <span class="note"></span>
+→ scanning codebase… <span class="ok">ok</span>
+→ discovering conventions… <span class="ok">ok</span>
+→ wrote "repo-patterns.json" <span class="note"></span>
 
-            <span class="prompt">$</span> <span class="cmd">git commit</span> -m "Refactor billing"
+<span class="prompt">$</span> <span class="cmd">git commit</span> -m "Refactor billing"
 
-            scrubby pre-commit:
-              <span class="warn">warning</span>  Non-idiomatic pattern in src/billing/
-              <span class="bad">error</span>    Inefficient query helper (perf regression)
+scrubby pre-commit:
+  <span class="warn">warning</span>  Non-idiomatic pattern in src/billing/
+  <span class="bad">error</span>    Inefficient query helper (perf regression)
 
-            Options: [f]ix patch  [o]verride once  [c]ancel
-            <span class="prompt">scrubby</span> <span class="cmd">f</span>
-            ✔ patch applied
-            ✔ commit allowed <span class="cursor"></span>
+Options: [f]ix patch  [o]verride once  [c]ancel
+<span class="prompt">$</span> <span class="cmd">scrubby</span> <span class="cmd">f</span>
+   ✔ patch applied
+   ✔ commit allowed <span class="cursor"></span>
           </div>
         </div>
         <!-- end terminal panel -->
@@ -79,7 +79,7 @@
              <div>
                <div class="sign-up-badge" style="margin-top: 30px; margin-bottom: 10px">DEVELOPER PREVIEW SIGN UP</div>
                <div style="display: flex; gap: 12px; max-width:400px;">
-                <img src="/assets/scrubbyai cropped.jpg" style="width:35%;">
+                <img src="./assets/scrubbyai cropped.jpg" style="width:35%;">
                  <h2 style="margin:16px 0px 6px 0px; color: #000; font-size: 28px;">Join the Scrubby beta</h2>
                </div>
                <p class="subhead" style="margin-top:6%; color:#000;">Designed for teams where productivity metrics are up, but so are rework, churn, and rollbacks. Scrubby shifts quality left without turning tech leads into full-time reviewers.</p>
@@ -89,8 +89,13 @@
                </p>
              </div>
            </div>
-              <form onsubmit="event.preventDefault(); alert('✅ You’re on the waitlist! (Replace this handler with your real endpoint.)');">
-                     <input type="email" placeholder="you@company.com" required />
+              <form action="https://api.web3forms.com/submit" method="POST">
+                     <input type="hidden" name="access_key" value="d0e62641-134f-40ac-abeb-0f3e59df0546">
+                     <input type="hidden" name="subject" value="New Scrubby Beta Signup">
+                     <input type="hidden" name="redirect" value="https://scrubby.ai">
+                     <!-- Honeypot spam protection -->
+                     <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+                     <input type="email" name="email" placeholder="you@company.com" required />
                      <button type="submit">Request access</button>
                    </form>
             </div>
@@ -310,8 +315,13 @@ scrubby ci --comment-pr --block-on error</div>
           </div>
         </div>
 
-        <form onsubmit="event.preventDefault(); alert('✅ You’re on the waitlist! (Replace this handler with your real endpoint.)');">
-          <input type="email" placeholder="you@company.com" required />
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d0e62641-134f-40ac-abeb-0f3e59df0546">
+          <input type="hidden" name="subject" value="New Scrubby Beta Signup">
+          <input type="hidden" name="redirect" value="success.html">
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <input type="email" name="email" placeholder="you@company.com" required />
           <button type="submit">Request access</button>
         </form>
 
