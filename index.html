@@ -29,7 +29,6 @@
       </div>
 
       <div class="nav">
-        <a href="#features">Features</a>
         <a href="#workflow">Workflow</a>
         <a href="#faq">FAQ</a>
         <a href="#join">Get the Beta</a>
@@ -41,75 +40,70 @@
       <div class="panel hero-copy">
         <div class="badge">BETA · LIMITED ACCESS</div>
 
-
         <h1>Protect your codebase from AI slop.</h1>
-          <p class="lead">AI assistants ship code faster, but move the review burden upstream.</p>
-          <p class="lead"> Scrubby learns your codebase conventions and blocks inefficient, non-idiomatic AI code before it ships.</p>
+        <p class="lead">AI assistants ship code faster, but move the review burden upstream.</p>
+        <p class="lead"> Scrubby learns your codebase conventions and blocks inefficient, non-idiomatic AI code before it ships.</p>
 
-        <!-- <div class="cta-row">
-          <a class="btn" href="#join">Request access</a>
-          <a class="btn secondary" href="#workflow">See how it works</a>
-        </div> -->
+        <!-- terminal panel -->
+        <div class="panel">
+          <div class="term-body">
+            <span class="prompt">$</span> <span class="cmd">scrubby learn</span> . --save repo-patterns.json
 
-        <p class="fineprint">
-          Designed for teams where productivity metrics are up, but so are rework, churn, and rollbacks.
-          Scrubby shifts quality left without turning tech leads into full-time reviewers.
-        </p>
-        <section id="join">
-      <div class="signup">
-        <div class="signup-head">
-          <div>
-            <div class="badge">DEVELOPER PREVIEW SIGN UP</div>
-            <h2 style="margin-top:6px;">Join the Scrubby beta</h2>
-            <p class="subhead" style="margin-top:6px;">
-              If your team uses AI coding assistants and your review load is climbing,
-              Scrubby is built for you.
-            </p>
+            → scanning codebase… <span class="ok">ok</span>
+            → discovering conventions… <span class="ok">ok</span>
+            → wrote "repo-patterns.json" <span class="note"></span>
+
+            <span class="prompt">$</span> <span class="cmd">git commit</span> -m "Refactor billing"
+
+            scrubby pre-commit:
+              <span class="warn">warning</span>  Non-idiomatic pattern in src/billing/
+              <span class="bad">error</span>    Inefficient query helper (perf regression)
+
+            Options: [f]ix patch  [o]verride once  [c]ancel
+            <span class="prompt">scrubby</span> <span class="cmd">f</span>
+            ✔ patch applied
+            ✔ commit allowed <span class="cursor"></span>
           </div>
         </div>
+        <!-- end terminal panel -->
+      </div>
+      <div class="signup" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="pillrow" style="margin-bottom:20px; color:darkslategray" aria-hidden="true">
+               <div class="pill" style="background-color: var(--yellow);">real-time inline feedback</div>
+               <div class="pill" style="background-color: var(--cyan);">intelligent pattern recognition</div>
+               <div class="pill" style="background-color: var(--red);">fast local checks</div>
+               <div class="pill" style="background-color: var(--green);">CI pattern enforcement</div>
+             </div>
+           <div class="signup-head" style="margin-bottom: 10%;">
+             <div>
+               <div class="sign-up-badge" style="margin-top: 30px; margin-bottom: 10px">DEVELOPER PREVIEW SIGN UP</div>
+               <div style="display: flex; gap: 12px; max-width:400px;">
+                <img src="/assets/scrubbyai cropped.jpg" style="width:35%;">
+                 <h2 style="margin:16px 0px 6px 0px; color: #000; font-size: 28px;">Join the Scrubby beta</h2>
+               </div>
+               <p class="subhead" style="margin-top:6%; color:#000;">Designed for teams where productivity metrics are up, but so are rework, churn, and rollbacks. Scrubby shifts quality left without turning tech leads into full-time reviewers.</p>
+               <p class="subhead" style="margin-top:6px; color:#000;">
+                 If your team uses AI coding assistants and your review load is climbing,
+                 <span style="font-style: italic; font-weight: 600;">Scrubby is built for you</span>.
+               </p>
+             </div>
+           </div>
+              <form onsubmit="event.preventDefault(); alert('✅ You’re on the waitlist! (Replace this handler with your real endpoint.)');">
+                     <input type="email" placeholder="you@company.com" required />
+                     <button type="submit">Request access</button>
+                   </form>
+            </div>
 
-        <form onsubmit="event.preventDefault(); alert('✅ You’re on the waitlist! (Replace this handler with your real endpoint.)');">
-          <input type="email" placeholder="you@company.com" required />
-          <button type="submit">Request access</button>
-        </form>
-
-        <p class="fineprint" style="margin-top:8px;">
+        <p class="fineprint" style="margin:25px auto 0 auto; width: 80%; color:#3a3a3a; text-align: center;">
           No spam. We’ll invite you when a slot opens. If you can share a repo + feedback, you’ll get priority.
         </p>
       </div>
-    </section>
-      </div>
-
-      <div class="panel">
-        <div class="pillrow" aria-hidden="true">
-          <div class="pill">real-time inline feedback</div>
-          <div class="pill">intelligent pattern recognition</div>
-          <div class="pill">fast local checks</div>
-          <div class="pill">CI pattern enforcement</div>
-        </div>
-        <div class="term-body">
-<span class="prompt">$</span> <span class="cmd">scrubby learn</span> . --save repo-patterns.json
-
-→ scanning codebase… <span class="ok">ok</span>
-→ discovering conventions… <span class="ok">ok</span>
-→ wrote "repo-patterns.json" <span class="note"></span>
-
-<span class="prompt">$</span> <span class="cmd">git commit</span> -m "Refactor billing"
-
-scrubby pre-commit:
-  <span class="warn">warning</span>  Non-idiomatic pattern in src/billing/
-  <span class="bad">error</span>    Inefficient query helper (perf regression)
-
-Options: [f]ix patch  [o]verride once  [c]ancel
-<span class="prompt">scrubby</span> <span class="cmd">f</span>
-✔ patch applied
-✔ commit allowed <span class="cursor"></span>
-        </div>
-      </div>
     </div>
 
-    <!-- SOCIAL PROOF (marketing vibe) -->
-    <div class="proof" aria-label="Social proof">
+    <!-- SOCIAL PROOF - THIS IS TO BE FILLED IN WITH PARTICIPATING COMPANY LOGOS WHEN WE HAVE WIDER ADOPTION -->
+    
+    <!-- <div class="proof" aria-label="Social proof">
       <strong>Built for teams shipping AI-assisted code.</strong>
       <div class="logos" aria-hidden="true">
         <div class="logo-chip">Your Company</div>
@@ -117,15 +111,15 @@ Options: [f]ix patch  [o]verride once  [c]ancel
         <div class="logo-chip">Dev Org</div>
         <div class="logo-chip">Platform</div>
       </div>
-    </div>
+    </div> -->
 
     <!-- WHY / PROBLEM -->
+    <hr>
     <section id="why">
       <div class="section-head">
-        <h2>The paradox</h2>
+        <h2 style="color:var(--red)">The paradox:</h2>
         <p class="subhead">
-          Junior devs ship more code faster. Senior engineers spend more time reviewing and debugging.
-          Quality gates haven’t evolved for AI-assisted output — so the burden transfers upstream.
+          AI allows devs to ship more code faster, but it also increases review times and reduces overall codebase quality and consistency.
         </p>
       </div>
 
@@ -153,21 +147,20 @@ Options: [f]ix patch  [o]verride once  [c]ancel
     <!-- PRODUCT -->
     <section id="product">
       <div class="section-head">
-        <h2>Scrubby is a repo-specific quality gate</h2>
+        <h2 style="color: var(--green)">Scrubby is a repo-specific quality gate</h2>
         <p class="subhead">
-          Scrubby learns your codebase conventions and enforces them automatically —
-          unlike one-size-fits-all linters.
+          Scrubby learns your codebase conventions and enforces them automatically.
         </p>
       </div>
 
       <div class="grid3">
         <div class="card">
           <h3>Learns your patterns</h3>
-          <p>Scans your repo, discovers implicit conventions, and saves them as <code>repo-patterns.json</code>.</p>
+          <p>Scans your repo, discovers implicit conventions, and saves them locally for quick reference</p>
         </div>
         <div class="card">
           <h3>Blocks slop early</h3>
-          <p>Stops inefficient, non-idiomatic changes at pre-commit and PR stages — before review debt forms.</p>
+          <p>Stops inefficient, non-idiomatic changes at pre-commit and PR stages, before review debt piles up.</p>
         </div>
         <div class="card">
           <h3>Explains and fixes</h3>
@@ -176,47 +169,54 @@ Options: [f]ix patch  [o]verride once  [c]ancel
       </div>
     </section>
 
+    <hr>
     <!-- WORKFLOW -->
     <section id="workflow">
       <div class="section-head">
-        <h2>How it works</h2>
+        <h2 style="color:var(--cyan)">How it works</h2>
         <p class="subhead">
-          One onboarding pass, then continuous guardrails for every dev — in VS Code, in the CLI, and in CI.
+          One onboarding pass, then continuous guardrails for every contributor.
         </p>
       </div>
 
       <div class="steps">
         <div class="step">
           <strong>1) Install → Setup wizard</strong>
-          <p>Extension configures language + API key. Optional org policy presets.</p>
+          <p>Quick step-through configuration for your team's language and check preferences.</p>
         </div>
         <div class="step">
           <strong>2) Learn the repo</strong>
-          <p>Scrubby scans and discovers conventions; writes <code>repo-patterns.json</code> into the repo.</p>
+          <p>Scrubby scans your repo and discovers your team's existing coding conventions.</p>
         </div>
         <div class="step">
           <strong>3) Real-time linting</strong>
-          <p>Inline violations appear as you code: dual-layer checks (fast static + repo-specific AI).</p>
+          <p>Inline violations appear as you code using dual-layer checks -- fast static + repo-specific AI.</p>
         </div>
         <div class="step">
           <strong>4) Pre-commit hook</strong>
-          <p>Interactive hook checks staged files: fix suggested patch, override once, or cancel commit.</p>
+          <p>Scrubby's interactive commit hook checks staged files, flags violations, and suggests fixes.</p>
         </div>
         <div class="step">
           <strong>5) PR quality gate</strong>
-          <p>GitHub Actions posts a violation report and can block merges on errors.</p>
+          <p>ScrubbyCI integration generates a pattern violation report and blocks merges until violation resolution.</p>
         </div>
         <div class="step">
-          <strong>6) CI-friendly outputs</strong>
-          <p>Console for humans; JSON/Markdown for PR comments, dashboards, and compliance logs.</p>
+          <strong>6) Human- and CI-friendly outputs</strong>
+          <p>Scrubby produces informative, historical logs in human-readable Markdown and structured JSON formats.</p>
         </div>
       </div>
 
-      <div class="two" style="margin-top:12px;">
+      <div class="section-head">
+        <h2 style="color: var(--green)">Multiple ways to work with Scrubby</h2>
+        <p class="subhead">
+          Use Scrubby interactively while coding, or run it headlessly for automation and enforcement.
+        </p>
+      </div>
+      <div></div>
         <div class="box">
-          <h3>VS Code extension</h3>
+          <h3>IDE Extension</h3>
           <ul>
-            <li>AI pattern discovery + repo save</li>
+            <li>Repo-contextual pattern discovery + repo save</li>
             <li>Real-time linting + inline diagnostics</li>
             <li>Chat assistant for explanations & fixes</li>
           </ul>
@@ -236,10 +236,9 @@ Scrubby: Explain Violation</div>
 scrubby check --staged
 scrubby ci --comment-pr --block-on error</div>
         </div>
-      </div>
     </section>
 
-    <!-- TESTIMONIALS (marketing vibe) -->
+    <!-- TESTIMONIALS (marketing vibe)
     <section id="testimonials">
       <div class="section-head">
         <h2>What teams want</h2>
@@ -260,8 +259,9 @@ scrubby ci --comment-pr --block-on error</div>
           <footer>— Staff Engineer</footer>
         </blockquote>
       </div>
-    </section>
+    </section> -->
 
+    <hr>
     <!-- FAQ -->
     <section id="faq">
       <div class="section-head">
@@ -270,7 +270,7 @@ scrubby ci --comment-pr --block-on error</div>
       </div>
 
       <details>
-        <summary>Is Scrubby “just ESLint with AI”?</summary>
+        <summary>> Is Scrubby “just ESLint with AI”?</summary>
         <p>
           No. Linters enforce universal rules. Scrubby enforces <em>your repo’s conventions</em> by learning patterns from your codebase,
           then applying them consistently at pre-commit and PR.
@@ -278,7 +278,7 @@ scrubby ci --comment-pr --block-on error</div>
       </details>
 
       <details>
-        <summary>Will this slow down commits?</summary>
+        <summary>> Will this slow down commits?</summary>
         <p>
           Scrubby is designed to be fast on the happy path. Pre-commit checks focus on staged files and use a dual-layer approach:
           quick static checks first, deeper AI checks only when needed.
@@ -286,14 +286,14 @@ scrubby ci --comment-pr --block-on error</div>
       </details>
 
       <details>
-        <summary>Do we need to use VS Code?</summary>
+        <summary>> Do we need to use VS Code?</summary>
         <p>
           No. VS Code is the best interactive experience, but the CLI wrapper and CI integration let teams enforce the gate regardless of editor.
         </p>
       </details>
 
       <details>
-        <summary>What about privacy?</summary>
+        <summary>> What about privacy?</summary>
         <p>
           In beta, analysis uses an API model with a structured pipeline. The roadmap includes local/edge inference for zero latency and stronger privacy.
         </p>
@@ -305,14 +305,9 @@ scrubby ci --comment-pr --block-on error</div>
       <div class="signup">
         <div class="signup-head">
           <div>
-            <div class="badge">DEVELOPER PREVIEW · LIMITED ACCESS</div>
-            <h2 style="margin-top:6px;">Join the Scrubby beta</h2>
-            <p class="subhead" style="margin-top:6px;">
-              If your team uses AI coding assistants and your review load is climbing,
-              Scrubby is built for you.
-            </p>
+            <div class="sign-up-badge">DEVELOPER PREVIEW · LIMITED ACCESS</div>
+            <h2 style="margin-top:6px; color:#000;">Join the Scrubby beta</h2>
           </div>
-          <a class="btn secondary" href="#top">Back to top</a>
         </div>
 
         <form onsubmit="event.preventDefault(); alert('✅ You’re on the waitlist! (Replace this handler with your real endpoint.)');">
@@ -320,7 +315,7 @@ scrubby ci --comment-pr --block-on error</div>
           <button type="submit">Request access</button>
         </form>
 
-        <p class="fineprint" style="margin-top:8px;">
+        <p class="fineprint" style="margin-top:8px;color:#3a3a3a;">
           No spam. We’ll invite you when a slot opens. If you can share a repo + feedback, you’ll get priority.
         </p>
       </div>
@@ -328,7 +323,7 @@ scrubby ci --comment-pr --block-on error</div>
 
     <div class="footer">
       <div>© <span id="year"></span> Scrubby</div>
-      <div>Status: stable-ish · quality: non-negotiable</div>
+      <div>Status: stable · quality: non-negotiable</div>
     </div>
   </div>
 
