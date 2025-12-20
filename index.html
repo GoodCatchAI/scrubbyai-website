@@ -1,181 +1,344 @@
 <!doctype html>
-<html lang="en" class="h-full">
- <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ScrubbyAI - Join the Beta Waitlist</title>
-  <script src="/_sdk/element_sdk.js"></script>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&amp;display=swap" rel="stylesheet">
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Scrubby — Developer Preview & Beta Sign-Up</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Scrubby is an AI-powered quality gate that learns your codebase conventions and blocks non-idiomatic, inefficient 'slop' at pre-commit and PR stages." />
   <link rel="stylesheet" href="styles.css">
-  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
- </head>
- <body>
-  <div class="page-wrapper gradient-bg">
-   <div class="content-wrapper"><!-- Header -->
-    <header>
-     <div class="header-container">
-      <div class="logo-section">
-       <img src="assets/scrubbyai cropped.jpg" alt="ScrubbyAI logo"></img>
-       <div>
-        <h1 id="company-name" class="company-name" style="color: #559fcb;">ScrubbyAI</h1>
-        <p id="tagline" class="tagline" style="color: #72829c;">Clean up AI slop before it ships.</p>
-       </div>
-      </div>
-     </div>
-    </header>
-    <!-- Hero Section -->
-    <main>
-     <div class="hero-container">
-        <div class="hero-container-inner-left">
-            <h2 id="hero-title" class="hero-title" style="color: #559fcb;">Join the Scrubby Beta</h2>
-            <p id="hero-description" class="hero-description" style="color: #72829c;">We're building the world's first developer toolkit that catches AI slop before it hits your codebase.</p>
-            <p id="hero-description" class="hero-description" style="color: #72829c;">Sign up for your chance to test the beta when we launch.</p>
-            <p id="hero-description" class="hero-description" style="color: #72829c; font-style: italic; text-align: center;">~ Launching Winter 2026 ~</p>
-        </div>
-        <div class="hero-container-inner-right">
-            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSepV_rwH5PTJXRW-ZmUzWOOvBgwot4skr-j0kCOs4-NO8UIdQ/viewform?embedded=true" width="640" height="640" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>     
+</head>
+
+<body>
+  <!-- OPTIONAL: paste ASCII art here -->
+  <pre class="ascii-bg" aria-hidden="true"></pre>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-title">
+          <strong>ScrubbyAI</strong>
+          <span>Convention checks for AI-assisted code.</span>
         </div>
       </div>
-    </main>
-    <!-- Footer -->
-    <footer>
-     <div class="footer-container">
-      <p id="footer-text" class="footer-text" style="color: #72829c;">© 2025 ScrubbyAI. All rights reserved.</p>
-     </div>
-    </footer>
-   </div>
+      
+      <div class="dots" aria-hidden="true">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+
+      <div class="nav">
+        <a href="#workflow">Workflow</a>
+        <a href="#faq">FAQ</a>
+        <a href="#join">Get the Beta</a>
+      </div>
+    </div>
+
+    <!-- HERO: marketing copy + terminal proof -->
+    <div class="hero">
+      <div class="panel hero-copy">
+        <div class="badge">BETA · LIMITED ACCESS</div>
+
+        <h1>Protect your codebase from AI slop.</h1>
+        <p class="lead">AI assistants ship code faster, but move the review burden upstream.</p>
+        <p class="lead"> Scrubby learns your codebase conventions and blocks inefficient, non-idiomatic AI code before it ships.</p>
+
+        <!-- terminal panel -->
+        <div class="panel">
+          <div class="term-body">
+<span class="prompt">$</span> <span class="cmd">scrubby learn</span> . --save repo-patterns.json
+
+→ scanning codebase… <span class="ok">ok</span>
+→ discovering conventions… <span class="ok">ok</span>
+→ wrote "repo-patterns.json" <span class="note"></span>
+
+<span class="prompt">$</span> <span class="cmd">git commit</span> -m "Refactor billing"
+
+scrubby pre-commit:
+  <span class="warn">warning</span>  Non-idiomatic pattern in src/billing/
+  <span class="bad">error</span>    Inefficient query helper (perf regression)
+
+Options: [f]ix patch  [o]verride once  [c]ancel
+<span class="prompt">$</span> <span class="cmd">scrubby</span> <span class="cmd">f</span>
+   ✔ patch applied
+   ✔ commit allowed <span class="cursor"></span>
+          </div>
+        </div>
+        <!-- end terminal panel -->
+      </div>
+      <div class="signup" style="display: flex; flex-direction: column; justify-content: space-between;">
+        <div>
+          <div class="pillrow" style="margin-bottom:20px; color:darkslategray" aria-hidden="true">
+               <div class="pill" style="background-color: var(--yellow);">real-time inline feedback</div>
+               <div class="pill" style="background-color: var(--cyan);">intelligent pattern recognition</div>
+               <div class="pill" style="background-color: var(--red);">fast local checks</div>
+               <div class="pill" style="background-color: var(--green);">CI pattern enforcement</div>
+             </div>
+           <div class="signup-head" style="margin-bottom: 10%;">
+             <div>
+               <div class="sign-up-badge" style="margin-top: 30px; margin-bottom: 10px">DEVELOPER PREVIEW SIGN UP</div>
+               <div style="display: flex; gap: 12px; max-width:400px;">
+                <img src="./assets/scrubbyai cropped.jpg" style="width:35%;">
+                 <h2 style="margin:16px 0px 6px 0px; color: #000; font-size: 28px;">Join the Scrubby beta</h2>
+               </div>
+               <p class="subhead" style="margin-top:6%; color:#000;">Designed for teams where productivity metrics are up, but so are rework, churn, and rollbacks. Scrubby shifts quality left without turning tech leads into full-time reviewers.</p>
+               <p class="subhead" style="margin-top:6px; color:#000;">
+                 If your team uses AI coding assistants and your review load is climbing,
+                 <span style="font-style: italic; font-weight: 600;">Scrubby is built for you</span>.
+               </p>
+             </div>
+           </div>
+              <form action="https://api.web3forms.com/submit" method="POST">
+                     <input type="hidden" name="access_key" value="d0e62641-134f-40ac-abeb-0f3e59df0546">
+                     <input type="hidden" name="subject" value="New Scrubby Beta Signup">
+                     <input type="hidden" name="redirect" value="https://scrubby.ai">
+                     <!-- Honeypot spam protection -->
+                     <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+                     <input type="email" name="email" placeholder="you@company.com" required />
+                     <button type="submit">Request access</button>
+                   </form>
+            </div>
+
+        <p class="fineprint" style="margin:25px auto 0 auto; width: 80%; color:#3a3a3a; text-align: center;">
+          No spam. We’ll invite you when a slot opens. If you can share a repo + feedback, you’ll get priority.
+        </p>
+      </div>
+    </div>
+
+    <!-- SOCIAL PROOF - THIS IS TO BE FILLED IN WITH PARTICIPATING COMPANY LOGOS WHEN WE HAVE WIDER ADOPTION -->
+    
+    <!-- <div class="proof" aria-label="Social proof">
+      <strong>Built for teams shipping AI-assisted code.</strong>
+      <div class="logos" aria-hidden="true">
+        <div class="logo-chip">Your Company</div>
+        <div class="logo-chip">Another Team</div>
+        <div class="logo-chip">Dev Org</div>
+        <div class="logo-chip">Platform</div>
+      </div>
+    </div> -->
+
+    <!-- WHY / PROBLEM -->
+    <hr>
+    <section id="why">
+      <div class="section-head">
+        <h2 style="color:var(--red)">The paradox:</h2>
+        <p class="subhead">
+          AI allows devs to ship more code faster, but it also increases review times and reduces overall codebase quality and consistency.
+        </p>
+      </div>
+
+      <div class="two">
+        <div class="box">
+          <h3>What changed</h3>
+          <ul>
+            <li>40%+ of new code is AI-assisted (and rising)</li>
+            <li>Code compiles ≠ code belongs in your repo</li>
+            <li>Universal lint rules don’t capture team conventions</li>
+          </ul>
+        </div>
+
+        <div class="box">
+          <h3>What it causes</h3>
+          <ul>
+            <li>Review becomes pattern-policing</li>
+            <li>More rework, churn, and rollbacks</li>
+            <li>Tech leads become full-time reviewers</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- PRODUCT -->
+    <section id="product">
+      <div class="section-head">
+        <h2 style="color: var(--green)">Scrubby is a repo-specific quality gate</h2>
+        <p class="subhead">
+          Scrubby learns your codebase conventions and enforces them automatically.
+        </p>
+      </div>
+
+      <div class="grid3">
+        <div class="card">
+          <h3>Learns your patterns</h3>
+          <p>Scans your repo, discovers implicit conventions, and saves them locally for quick reference</p>
+        </div>
+        <div class="card">
+          <h3>Blocks slop early</h3>
+          <p>Stops inefficient, non-idiomatic changes at pre-commit and PR stages, before review debt piles up.</p>
+        </div>
+        <div class="card">
+          <h3>Explains and fixes</h3>
+          <p>AI assistant explains violations, suggests patches, and helps devs learn your team’s standards.</p>
+        </div>
+      </div>
+    </section>
+
+    <hr>
+    <!-- WORKFLOW -->
+    <section id="workflow">
+      <div class="section-head">
+        <h2 style="color:var(--cyan)">How it works</h2>
+        <p class="subhead">
+          One onboarding pass, then continuous guardrails for every contributor.
+        </p>
+      </div>
+
+      <div class="steps">
+        <div class="step">
+          <strong>1) Install → Setup wizard</strong>
+          <p>Quick step-through configuration for your team's language and check preferences.</p>
+        </div>
+        <div class="step">
+          <strong>2) Learn the repo</strong>
+          <p>Scrubby scans your repo and discovers your team's existing coding conventions.</p>
+        </div>
+        <div class="step">
+          <strong>3) Real-time linting</strong>
+          <p>Inline violations appear as you code using dual-layer checks -- fast static + repo-specific AI.</p>
+        </div>
+        <div class="step">
+          <strong>4) Pre-commit hook</strong>
+          <p>Scrubby's interactive commit hook checks staged files, flags violations, and suggests fixes.</p>
+        </div>
+        <div class="step">
+          <strong>5) PR quality gate</strong>
+          <p>ScrubbyCI integration generates a pattern violation report and blocks merges until violation resolution.</p>
+        </div>
+        <div class="step">
+          <strong>6) Human- and CI-friendly outputs</strong>
+          <p>Scrubby produces informative, historical logs in human-readable Markdown and structured JSON formats.</p>
+        </div>
+      </div>
+
+      <div class="section-head">
+        <h2 style="color: var(--green)">Multiple ways to work with Scrubby</h2>
+        <p class="subhead">
+          Use Scrubby interactively while coding, or run it headlessly for automation and enforcement.
+        </p>
+      </div>
+      <div></div>
+        <div class="box">
+          <h3>IDE Extension</h3>
+          <ul>
+            <li>Repo-contextual pattern discovery + repo save</li>
+            <li>Real-time linting + inline diagnostics</li>
+            <li>Chat assistant for explanations & fixes</li>
+          </ul>
+          <div class="code">Scrubby: Setup Wizard
+Scrubby: Learn Repo Patterns
+Scrubby: Explain Violation</div>
+        </div>
+
+        <div class="box">
+          <h3>CLI wrapper</h3>
+          <ul>
+            <li>Batch checks (staged, diff, or full repo)</li>
+            <li>Pre-commit + CI modes</li>
+            <li>Outputs: console / json / markdown</li>
+          </ul>
+          <div class="code">scrubby learn . --save repo-patterns.json
+scrubby check --staged
+scrubby ci --comment-pr --block-on error</div>
+        </div>
+    </section>
+
+    <!-- TESTIMONIALS (marketing vibe)
+    <section id="testimonials">
+      <div class="section-head">
+        <h2>What teams want</h2>
+        <p class="subhead">Replace “review as enforcement” with “review as collaboration.”</p>
+      </div>
+
+      <div class="quotes">
+        <blockquote>
+          “We need our PR reviews back. Right now it’s 60% pattern policing.”
+          <footer>— Tech Lead, mid-size SaaS</footer>
+        </blockquote>
+        <blockquote>
+          “AI made us faster… and made our rollback rate worse. We need a gate.”
+          <footer>— Engineering Manager</footer>
+        </blockquote>
+        <blockquote>
+          “If it’s not repo-specific, it’s just another linter nobody trusts.”
+          <footer>— Staff Engineer</footer>
+        </blockquote>
+      </div>
+    </section> -->
+
+    <hr>
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="section-head">
+        <h2>FAQ</h2>
+        <p class="subhead">Short answers. No theater.</p>
+      </div>
+
+      <details>
+        <summary>> Is Scrubby “just ESLint with AI”?</summary>
+        <p>
+          No. Linters enforce universal rules. Scrubby enforces <em>your repo’s conventions</em> by learning patterns from your codebase,
+          then applying them consistently at pre-commit and PR.
+        </p>
+      </details>
+
+      <details>
+        <summary>> Will this slow down commits?</summary>
+        <p>
+          Scrubby is designed to be fast on the happy path. Pre-commit checks focus on staged files and use a dual-layer approach:
+          quick static checks first, deeper AI checks only when needed.
+        </p>
+      </details>
+
+      <details>
+        <summary>> Do we need to use VS Code?</summary>
+        <p>
+          No. VS Code is the best interactive experience, but the CLI wrapper and CI integration let teams enforce the gate regardless of editor.
+        </p>
+      </details>
+
+      <details>
+        <summary>> What about privacy?</summary>
+        <p>
+          In beta, analysis uses an API model with a structured pipeline. The roadmap includes local/edge inference for zero latency and stronger privacy.
+        </p>
+      </details>
+    </section>
+
+    <!-- FINAL CTA (marketing-style close) -->
+    <section id="join">
+      <div class="signup">
+        <div class="signup-head">
+          <div>
+            <div class="sign-up-badge">DEVELOPER PREVIEW · LIMITED ACCESS</div>
+            <h2 style="margin-top:6px; color:#000;">Join the Scrubby beta</h2>
+          </div>
+        </div>
+
+        <form action="https://api.web3forms.com/submit" method="POST">
+          <input type="hidden" name="access_key" value="d0e62641-134f-40ac-abeb-0f3e59df0546">
+          <input type="hidden" name="subject" value="New Scrubby Beta Signup">
+          <input type="hidden" name="redirect" value="success.html">
+          <!-- Honeypot spam protection -->
+          <input type="checkbox" name="botcheck" class="hidden" style="display:none;">
+          <input type="email" name="email" placeholder="you@company.com" required />
+          <button type="submit">Request access</button>
+        </form>
+
+        <p class="fineprint" style="margin-top:8px;color:#3a3a3a;">
+          No spam. We’ll invite you when a slot opens. If you can share a repo + feedback, you’ll get priority.
+        </p>
+      </div>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Scrubby</div>
+      <div>Status: stable · quality: non-negotiable</div>
+    </div>
   </div>
+
   <script>
-    const defaultConfig = {
-      background_color: "#ecedec",
-      primary_color: "#559fcb",
-      secondary_color: "#72829c",
-      text_color: "#72829c",
-      accent_color: "#ffffff",
-      font_family: "Poppins",
-      font_size: 16,
-      company_name: "ScrubbyAI",
-      tagline: "Clean up AI slop before it ships.",
-      hero_title: "Join the Scrubby Beta",
-      hero_description: "Be among the first to experience Scrubby and help shape the future of AI content quality control.",
-      footer_text: "© 2024 ScrubbyAI. All rights reserved."
-    };
-
-    async function onConfigChange(config) {
-      const customFont = config.font_family || defaultConfig.font_family;
-      const baseFontStack = 'sans-serif';
-      const baseSize = config.font_size || defaultConfig.font_size;
-      
-      // Apply colors
-      const body = document.querySelector('body > div');
-      body.style.background = `linear-gradient(135deg, ${config.background_color || defaultConfig.background_color} 0%, #f8f9fa 100%)`;
-      
-      const companyNameEl = document.getElementById('company-name');
-      companyNameEl.style.color = config.primary_color || defaultConfig.primary_color;
-      companyNameEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      companyNameEl.style.fontSize = `${baseSize * 1.25}px`;
-      
-      const taglineEl = document.getElementById('tagline');
-      taglineEl.style.color = config.secondary_color || defaultConfig.secondary_color;
-      taglineEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      taglineEl.style.fontSize = `${baseSize * 0.875}px`;
-      
-      const heroTitleEl = document.getElementById('hero-title');
-      heroTitleEl.style.color = config.primary_color || defaultConfig.primary_color;
-      heroTitleEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      heroTitleEl.style.fontSize = `${baseSize * 3}px`;
-      
-      const heroDescEl = document.getElementById('hero-description');
-      heroDescEl.style.color = config.text_color || defaultConfig.text_color;
-      heroDescEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      heroDescEl.style.fontSize = `${baseSize * 1.25}px`;
-      
-      const footerEl = document.getElementById('footer-text');
-      footerEl.style.color = config.secondary_color || defaultConfig.secondary_color;
-      footerEl.style.fontFamily = `${customFont}, ${baseFontStack}`;
-      footerEl.style.fontSize = `${baseSize * 0.875}px`;
-      
-      // Update text content
-      companyNameEl.textContent = config.company_name || defaultConfig.company_name;
-      taglineEl.textContent = config.tagline || defaultConfig.tagline;
-      heroTitleEl.textContent = config.hero_title || defaultConfig.hero_title;
-      heroDescEl.textContent = config.hero_description || defaultConfig.hero_description;
-      footerEl.textContent = config.footer_text || defaultConfig.footer_text;
-      
-      // Update SVG logo color
-      const svgRect = document.querySelector('svg rect');
-      svgRect.setAttribute('fill', config.primary_color || defaultConfig.primary_color);
-      const svgCircle = document.querySelector('svg circle');
-      svgCircle.setAttribute('fill', config.primary_color || defaultConfig.primary_color);
-    }
-
-    if (window.elementSdk) {
-      window.elementSdk.init({
-        defaultConfig,
-        onConfigChange,
-        mapToCapabilities: (config) => ({
-          recolorables: [
-            {
-              get: () => config.background_color || defaultConfig.background_color,
-              set: (value) => {
-                config.background_color = value;
-                window.elementSdk.setConfig({ background_color: value });
-              }
-            },
-            {
-              get: () => config.primary_color || defaultConfig.primary_color,
-              set: (value) => {
-                config.primary_color = value;
-                window.elementSdk.setConfig({ primary_color: value });
-              }
-            },
-            {
-              get: () => config.secondary_color || defaultConfig.secondary_color,
-              set: (value) => {
-                config.secondary_color = value;
-                window.elementSdk.setConfig({ secondary_color: value });
-              }
-            },
-            {
-              get: () => config.text_color || defaultConfig.text_color,
-              set: (value) => {
-                config.text_color = value;
-                window.elementSdk.setConfig({ text_color: value });
-              }
-            },
-            {
-              get: () => config.accent_color || defaultConfig.accent_color,
-              set: (value) => {
-                config.accent_color = value;
-                window.elementSdk.setConfig({ accent_color: value });
-              }
-            }
-          ],
-          borderables: [],
-          fontEditable: {
-            get: () => config.font_family || defaultConfig.font_family,
-            set: (value) => {
-              config.font_family = value;
-              window.elementSdk.setConfig({ font_family: value });
-            }
-          },
-          fontSizeable: {
-            get: () => config.font_size || defaultConfig.font_size,
-            set: (value) => {
-              config.font_size = value;
-              window.elementSdk.setConfig({ font_size: value });
-            }
-          }
-        }),
-        mapToEditPanelValues: (config) => new Map([
-          ["company_name", config.company_name || defaultConfig.company_name],
-          ["tagline", config.tagline || defaultConfig.tagline],
-          ["hero_title", config.hero_title || defaultConfig.hero_title],
-          ["hero_description", config.hero_description || defaultConfig.hero_description],
-          ["footer_text", config.footer_text || defaultConfig.footer_text]
-        ])
-      });
-    }
+    document.getElementById("year").textContent = new Date().getFullYear();
   </script>
- <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9aeb3709f791fefd',t:'MTc2NTg1NzAxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</body>
 </html>

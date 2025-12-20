@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>You're on the list — Scrubby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="robots" content="noindex" />
+  <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+  <pre class="ascii-bg" aria-hidden="true"></pre>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <div class="logo" aria-hidden="true"></div>
+        <div class="brand-title">
+          <strong>ScrubbyAI</strong>
+          <span>Convention checks for AI-assisted code.</span>
+        </div>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+
+      <div class="nav">
+        <a href="index.html#workflow">Workflow</a>
+        <a href="index.html#faq">FAQ</a>
+        <a href="index.html#join">Get the Beta</a>
+      </div>
+    </div>
+
+    <section style="padding:80px 10px; text-align: center;">
+      <div class="panel" style="max-width:500px; margin:0 auto; padding:40px;">
+        <div class="success-term-body" style="text-align: left;">
+<span class="prompt">$</span> <span class="cmd">scrubby register</span> --email you@company.com
+
+<span class="ok">✔ success</span>  You're on the waitlist.
+
+<span class="note">→ We'll be in touch when a slot opens.</span>
+<span class="note">→ Priority access for teams sharing repo + feedback.</span>
+        </div>
+      </div>
+
+      <p style="margin-top:30px; color:#666;">
+        <a href="index.html" style="color:var(--cyan);">← Back to home</a>
+      </p>
+    </section>
+
+    <div class="footer">
+      <div>© <span id="year"></span> Scrubby</div>
+      <div>Status: stable · quality: non-negotiable</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
