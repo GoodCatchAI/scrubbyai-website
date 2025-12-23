@@ -1,0 +1,35 @@
+# Site settings
+title: Scrubby
+description: AI-powered quality gate that learns your codebase conventions
+url: "https://scrubby.ai"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:title/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - CNAME
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:title/
+
+# Default front matter
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+
+# Plugins (GitHub Pages supported)
+plugins:
+  - jekyll-seo-tag

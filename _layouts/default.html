@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>{% if page.title %}{{ page.title }} — {% endif %}Scrubby</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="{{ page.description | default: 'Scrubby is an AI-powered quality gate that learns your codebase conventions and blocks non-idiomatic, inefficient code at pre-commit and PR stages.' }}" />
+  <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+</head>
+
+<body>
+  <pre class="ascii-bg" aria-hidden="true"></pre>
+
+  <div class="wrap">
+    <div class="topbar">
+      <div class="brand">
+        <a href="{{ '/' | relative_url }}" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 8px;">
+          <div class="logo" aria-hidden="true"></div>
+          <div class="brand-title">
+            <strong>ScrubbyAI</strong>
+            <span>Convention checks for AI-assisted code.</span>
+          </div>
+        </a>
+      </div>
+
+      <div class="dots" aria-hidden="true">
+        <div class="dot red"></div>
+        <div class="dot yellow"></div>
+        <div class="dot green"></div>
+      </div>
+
+      <div class="nav">
+        <a href="{{ '/' | relative_url }}#workflow">Workflow</a>
+        <a href="{{ '/' | relative_url }}#faq">FAQ</a>
+        <a href="{{ '/blog' | relative_url }}">Blog</a>
+        <a href="{{ '/' | relative_url }}#join">Get the Beta</a>
+      </div>
+    </div>
+
+    {{ content }}
+
+    <div class="footer">
+      <div>© <span id="year"></span> Scrubby</div>
+      <div>Status: stable · quality: non-negotiable</div>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

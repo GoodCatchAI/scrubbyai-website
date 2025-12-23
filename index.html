@@ -31,6 +31,7 @@
       <div class="nav">
         <a href="#workflow">Workflow</a>
         <a href="#faq">FAQ</a>
+        <a href="/blog/">Blog</a>
         <a href="#join">Get the Beta</a>
       </div>
     </div>
@@ -340,5 +341,17 @@ scrubby ci --comment-pr --block-on error</div>
   <script>
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+  <script async src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
 </body>
 </html>

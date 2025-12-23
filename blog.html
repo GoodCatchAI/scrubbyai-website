@@ -1,0 +1,35 @@
+---
+layout: default
+title: Blog
+description: Updates, insights, and technical deep-dives from the Scrubby team.
+permalink: /blog/
+---
+
+<section class="blog-section">
+  <div class="section-head">
+    <h1 style="color: var(--cyan)">Blog</h1>
+    <p class="subhead">Updates, insights, and technical deep-dives from the Scrubby team.</p>
+  </div>
+
+  <div class="blog-grid">
+    {% for post in site.posts %}
+    <article class="blog-card">
+      {% if post.image %}
+      <div class="blog-card-image" style="background-image: url('{{ post.image | relative_url }}');"></div>
+      {% endif %}
+      <div class="blog-card-content">
+        <time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%B %d, %Y" }}</time>
+        <h2><a href="{{ post.url | relative_url }}">{{ post.title }}</a></h2>
+        <p>{{ post.excerpt | strip_html | truncate: 150 }}</p>
+        <a href="{{ post.url | relative_url }}" class="read-more">Read more →</a>
+      </div>
+    </article>
+    {% endfor %}
+  </div>
+
+  {% if site.posts.size == 0 %}
+  <div class="empty-state">
+    <p>No posts yet. Check back soon!</p>
+  </div>
+  {% endif %}
+</section>
